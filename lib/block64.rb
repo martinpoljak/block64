@@ -1,7 +1,10 @@
 require 'openssl'
 require 'base64'
 
-class Block64 < OpenSLL::PKey::RSA
+include OpenSSL
+include PKey
+
+class RSA
 
   BIT_MATCHER = /(\d+) bit/
 	
@@ -30,7 +33,7 @@ class Block64 < OpenSLL::PKey::RSA
   # Calculate the block size when decrypting.
   def decrypt_block_size
     if @decrypt_block_size.nil?
-        (self.size / 8) - 1
+        @decrypt_block_size = (self.size / 8) - 1
     end
     
     return @decrypt_block_size
