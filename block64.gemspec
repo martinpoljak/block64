@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "block64.gemspec",
     "lib/block64.rb"
   ]
   s.homepage = %q{http://github.com/martinkozak/block64}
