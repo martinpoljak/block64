@@ -1,36 +1,38 @@
 # encoding: utf-8
 require 'rubygems'
+require 'bundler'
+begin
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
 require 'rake'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = 'block64'
-    gem.summary = 'Encrypt and decrypt text of arbitrary length using RSA cyphers. Fixed and much faster fork of "crypto64" gem.'
-    gem.authors = '[Martin Kozík]'
-    gem.email = '<martinkozak@martinkozak.net>'
-    gem.description = <<-END
-      Encrypt and decrypt text of arbitrary length using RSA cyphers.
-      Extends the RSA class from the openssl library. Fixed and much faster fork of "crypto64" gem.
-    END
-    gem.homepage = 'http://github.com/martinkozak/base64'
-    readmes = FileList.new('*') { |list| list.exclude(/[a-z]/) }.to_a
-    gem.files = FileList['lib/**/*', 'bin/*', 'test/**/*', 'Rakefile'].to_a + readmes
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.name = "block64"
+  gem.homepage = "http://github.com/martinkozak/block64"
+  gem.license = "MIT"
+  gem.summary = 'Encrypt and decrypt text of arbitrary length using RSA cyphers. Fixed and much faster fork of "crypto64" gem.'
+  #gem.description = %Q{TODO: longer description of your gem}
+  gem.email = "martinkozak@martinkozak.net"
+  gem.authors = ["Martin Kozák"]
+  # Include your dependencies below. Runtime dependencies are required when using your gem,
+  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
+  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
+Jeweler::RubygemsDotOrgTasks.new
 
-task :spec => :check_dependencies
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
-task :default => :spec
-
-begin
-  require 'yard'
-  YARD::Rake::YardocTask.new
-rescue LoadError
-  task :yardoc do
-    abort "YARD is not available. In order to run yardoc, you must: sudo gem install yard"
-  end
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "block64 #{version}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
 end
