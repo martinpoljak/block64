@@ -1,6 +1,6 @@
 = block64
 
-Please, see source code.
+See source code. Both API and using is trivial and evident in it.
 
 == Contributing to block64
  
