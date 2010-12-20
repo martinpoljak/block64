@@ -12,8 +12,8 @@ API is trivial and usage is simple:
     require "block64"
     
     key = OpenSSL::PKey::RSA::new(<pem-encoded-key>)
-    encoded = key.encode64(<some-very-long-message>)
-    decoded = key.decode64(encoded)
+    encoded = key.encrypt64(<some-very-long-message>)
+    decoded = key.decrypt64(encoded)
     
 
 Contributing
