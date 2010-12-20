@@ -47,7 +47,7 @@ class RSA
     
     while str.length > encrypt_block_size
       enc << self.public_encrypt(str[0..encrypt_block_size])
-      str.replace(str[self.encrypt_block_size + 1..-1])
+      str.replace(str[encrypt_block_size + 1..-1])
     end 
     
     if str.length > 0
@@ -66,7 +66,7 @@ class RSA
     while str.length > 0
       dec << self.private_decrypt(str[0..decrypt_block_size])
       if str.length > decrypt_block_size
-        str.replace(str[self.decrypt_block_size + 1..-1])
+        str.replace(str[decrypt_block_size + 1..-1])
       end
     end
     
