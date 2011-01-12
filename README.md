@@ -2,7 +2,7 @@ block64
 =======
 
 **Block64** is a replacement for original [crypto64][3] gem. It can encrypt
-and decrypt arbitrary length strings by [RSA][4] public/private key. It's
+and decrypt data of arbitrary length by [RSA][4] public/private key. It's
 fixed for *use with latest Ruby* and *much faster* than original.
 
 ### Usage
@@ -29,8 +29,8 @@ Contributing
 Copyright
 ---------
 
-Copyright (c) 2007 Bart Teeuwisse and (c) 2010 [Martin Kozák][2]. See `LICENSE.txt` for
-further details.
+Copyright &copy; 2007 Bart Teeuwisse and &copy; 2010 - 2011 [Martin Kozák][2]. 
+See `LICENSE.txt` for further details.
 
 [1]: http://github.com/martinkozak/block64/issues
 [2]: http://www.martinkozak.net/
