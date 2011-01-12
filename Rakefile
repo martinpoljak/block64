@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "block64"
   gem.homepage = "http://github.com/martinkozak/block64"
   gem.license = "MIT"
-  gem.summary = 'Encrypt and decrypt data of arbitrary length using RSA cyphers. Fixed and much faster fork of "crypto64" gem.'
+  gem.summary = 'Encrypts and decrypts data of arbitrary length using RSA cyphers. Fixed and much faster fork of "crypto64" gem.'
   #gem.description = %Q{TODO: longer description of your gem}
   gem.email = "martinkozak@martinkozak.net"
   gem.authors = ["Martin Kozák"]
