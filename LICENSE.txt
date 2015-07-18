@@ -1,5 +1,5 @@
 Copyright (c) 2007 Bart Teeuwisse
-Copyright (c) 2010 - 2011 Martin Kozák
+Copyright (c) 2010 - 2015 Martin Poljak
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
